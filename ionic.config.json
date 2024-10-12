@@ -1,0 +1,13 @@
+{
+  "name": "chill-appv3",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://www.oxfordlearnersdictionaries.com"
+    }
+  ]
+}
