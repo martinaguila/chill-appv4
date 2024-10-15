@@ -11,6 +11,7 @@ import { ExitComponent } from '../exit/exit.component';
 import { ErrorComponent } from '../error/error.component';
 import { SpeakComponent } from '../speak/speak.component';
 import { DescriptionComponent } from '../description/description.component';
+import { TextToSpeech } from '@capacitor-community/text-to-speech';
 
 @Component({
   selector: 'app-welcome',
@@ -53,7 +54,18 @@ export class WelcomeComponent  implements OnInit {
     this.openModal();
     // this.getSearchResults();
     // this.getDescription() 
+    // this.speakTextAsChild()
 
+  }
+
+  async speakTextAsChild() {
+    await TextToSpeech.speak({
+      text: 'Hi there! I sound like a child!',
+      lang: 'en-US',  // Language code
+      rate: 1.3,      // Increase the speaking rate for a more energetic tone
+      pitch: 1.5,     // Increase the pitch to make the voice higher
+      volume: 1.0     // Volume (1 is full)
+    });
   }
 
   getDescription() {
@@ -158,6 +170,8 @@ export class WelcomeComponent  implements OnInit {
   }
 
   public buttonOnClick(): void {
+    // this.speakTextAsChild();
+    // return
     this.buttonService.playButtonClickSound();
     if (this.counter === 4) {
       this.greetingsFxService.playButtonClickSound("voice_begin.mp3");        

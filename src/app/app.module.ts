@@ -12,7 +12,7 @@ import { PictureComponent } from './modals/picture/picture.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ResultComponent } from './modals/result/result.component';
-
+import { AlphabetComponent } from './modals/alphabet/alphabet.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { ResultComponent } from './modals/result/result.component';
     WelcomeComponent,
     MenuComponent,
     PictureComponent,
-    ResultComponent
+    ResultComponent,
+    AlphabetComponent
   ],
   imports: [
     BrowserModule, 

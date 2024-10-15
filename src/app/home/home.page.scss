@@ -1,9 +1,5 @@
-ion-content {
-  background: url('../../assets/images/background.jpg') center/cover no-repeat var(--color-primary);  
-}
-
-#container {
-  background: url('../../assets/images/background.jpg') center/cover no-repeat var(--color-primary);  
+ion-content, #container {
+  background: url('../../assets/images/background.jpg') center/cover no-repeat var(--color-primary);
   text-align: center;
   height: 100%;
 }
@@ -42,9 +38,19 @@ p {
 .button-holder {
   text-align: center;
   position: absolute;
-  bottom: 6%;
-  left: 0;
+  bottom: 11%;
+  left: -44%;
   right: 0;
+  margin: 0 auto;
+  width: 90px;
+}
+
+.button-holder11 {
+  text-align: center;
+  position: absolute;
+  bottom: 11%;
+  left: 0;
+  right: -44%;
   margin: 0 auto;
   width: 90px;
 }
@@ -148,24 +154,15 @@ $background: #E4FFF7;
   }
 }
 
-// body {
-//   background-color: $background;
-// }
-
 h1 {
   font-size: 13vw;
   text-transform: uppercase;
-  font-family: "Comic Sans MS", "Arial", sans-serif;  /* Rounded font */
+  font-family: "Comic Sans MS", "Arial", sans-serif;
   font-weight: normal;
   display: block;
   width: 666px;
   max-width: 80vw;
-  // min-height: 90px;
-  // height: auto;
-  // text-align: center;
-  // margin: 10rem auto;
-  // margin: calc(50vh - 5rem) auto;
-  border-radius: 20px;  /* Adds some roundness */
-  background-color: rgba(255, 255, 255, 0.8);  /* Softer background behind text */
-  padding: 1rem;  /* More spacing for a 'pillowy' effect */
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
 }
