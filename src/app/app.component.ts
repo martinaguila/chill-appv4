@@ -52,11 +52,23 @@ export class AppComponent {
   private getGreeting() {
     const hour = new Date().getHours();
     if (hour >= 5 && hour < 12) {
+      this.bgMusicService.reduceVolume();
       this.greetingsFxService.playButtonClickSound("good-morning.mp3");  
+      setTimeout(async () => {
+        this.bgMusicService.restoreVolume();
+      }, 2000);
     } else if (hour >= 12 && hour < 18) {
+      this.bgMusicService.reduceVolume();
       this.greetingsFxService.playButtonClickSound("good-afternoon.mp3");
+      setTimeout(async () => {
+        this.bgMusicService.restoreVolume();
+      }, 3000);
     } else {
+      this.bgMusicService.reduceVolume();
       this.greetingsFxService.playButtonClickSound("good-evening.mp3");
+      setTimeout(async () => {
+        this.bgMusicService.restoreVolume();
+      }, 2000);
     }
   }
 
@@ -78,7 +90,7 @@ export class AppComponent {
       this.greetingsFxService.playButtonClickSound("exit.mp3"); 
       setTimeout(async () => {
         this.bgMusicService.restoreVolume();
-      }, 1200);
+      }, 1500);
     }, 200);
   }
 }

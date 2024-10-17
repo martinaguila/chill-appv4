@@ -1,7 +1,8 @@
 .main-container {
-    height: 100%; 
-    // background-image: linear-gradient(to bottom, #ff6347, #ffd700);
-    background: url('../../../assets/images/background.jpg') center/cover no-repeat var(--color-primary);
+  min-height: 100vh;
+  background: url('../../../assets/images/background.jpg') center/cover no-repeat var(--color-primary);
+  overflow-y: auto; /* Allows scrolling when content overflows */
+  padding-bottom: 20px; /* Add some padding to ensure space at the bottom */
 }
 
 body {
@@ -88,8 +89,7 @@ ion-grid {
     position: absolute;
     top: 2%;
     right: 4%;
-    // margin: 0 auto;
-    // width: 90px;
+    z-index: 1;
   }
   
   .top-img {
@@ -110,3 +110,101 @@ ion-grid {
 // #ffd54f (Amber Light)
 // #ba68c8 (Purple Light)
 // #f48fb1 (Pink Light)
+
+h1 {
+  text-align: center;
+  color: #4B0082;
+  margin: 0;
+  padding: 20px;
+  word-wrap: break-word;
+}
+
+$color-alpha: #b78846;
+
+.box {
+  // position: absolute;
+  // top: 30%;
+  // left: 50%;
+  transform: translate3d(6%, 100%, 0);
+  background: #D0E1F9;
+  width: 90%;
+  max-width: 600px;
+  padding: 5px;
+  border: 2px solid $color-alpha;
+  box-sizing: border-box; /* Ensure padding and border are included in the width/height calculation */
+  &:before, &:after {
+    content: "•";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    font-size: 14px;
+    color: $color-alpha;
+    border: 2px solid $color-alpha;
+    line-height: 12px;
+    top: 5px;
+    text-align: center;
+  }
+  &:before {
+    left: 5px;
+  }
+  &:after {
+    right: 5px;
+  }
+  .box-inner {
+    position: relative;
+    border: 2px solid $color-alpha;
+    // padding: 40px;
+    box-sizing: border-box;  /* Ensure padding and border are part of the box model */
+    &:before, &:after {
+      content: "•";
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      font-size: 14px;
+      color: $color-alpha;
+      border: 2px solid $color-alpha;
+      line-height: 12px;
+      bottom: -2px;
+      text-align: center;
+    }
+    &:before {
+      left: -2px;
+    }
+    &:after {
+      right: -2px;
+    }
+  }
+}
+
+.img {
+  width: 100%; /* Adjust as needed */
+  height: 100px; /* Maintain aspect ratio */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 
+      inset 0 4px 8px rgba(0, 0, 0, 0.2),  /* Inner shadow */
+      0 8px 15px rgba(0, 0, 0, 0.3);      /* Outer shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling and shadow */
+}
+
+.img.heartbeat {
+  animation: heartbeat 1s ease-in-out; /* Heartbeat animation */
+  box-shadow: 
+      inset 0 6px 12px rgba(0, 0, 0, 0.3),  /* Enhanced inner shadow during heartbeat */
+      0 12px 20px rgba(0, 0, 0, 0.4);       /* Enhanced outer shadow during heartbeat */
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+      transform: scale(1); /* Normal size */
+  }
+  25% {
+      transform: scale(1.2); /* First heartbeat pulse */
+  }
+  50% {
+      transform: scale(1); /* Return to normal size */
+  }
+  75% {
+      transform: scale(1.2); /* Second heartbeat pulse */
+  }
+}
+

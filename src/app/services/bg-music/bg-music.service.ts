@@ -13,14 +13,14 @@ export class BgMusicService {
 
   constructor() {
     this.bgSound = new Audio();
-    this.bgSound.src = 'assets/sounds/background.mp3';
+    this.bgSound.src = 'assets/sounds/kids-bg.mp3';
    }
 
   preloadAudio() {
     try {
       NativeAudio.preload({
         assetId: 'bgMusic',
-        assetPath: 'assets/sounds/background.mp3',
+        assetPath: 'assets/sounds/kids-bg.mp3',
         audioChannelNum: 1,
         isUrl: false
       });
@@ -54,7 +54,7 @@ export class BgMusicService {
   }
 
   reduceVolume() {
-    this.bgSound.volume = 0.1;
+    this.bgSound.volume = 0.05;
   }
   
   restoreVolume() {

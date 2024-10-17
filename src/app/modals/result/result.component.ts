@@ -10,6 +10,7 @@ import { ErrorComponent } from '../error/error.component';
 import { BgMusicService } from 'src/app/services/bg-music/bg-music.service';
 import { OpeningFxService } from 'src/app/services/opening-fx/opening-fx.service';
 import { DescriptionComponent } from '../description/description.component';
+import { TextToSpeech } from '@capacitor-community/text-to-speech';
 
 @Component({
   selector: 'app-result',
@@ -56,6 +57,7 @@ export class ResultComponent implements OnInit {
 
   ngOnInit() {
     this.getDescription();
+    this.speak(this.paramText)
   }
 
   getDescription() {
@@ -129,6 +131,30 @@ export class ResultComponent implements OnInit {
     } finally {
       this.stopRecognition();
     }
+  }
+
+  async speak(value: string) {
+    try {
+      this.bgMusicService.reduceVolume();      
+        await TextToSpeech.speak({
+            text: value,
+            lang: 'en-US',  // Language code
+            rate: 1.3,      // Increase the speaking rate for a more energetic tone
+            pitch: 1.5,     // Increase the pitch to make the voice higher
+            volume: 1.0     // Volume (1 is full)
+        });
+
+        // Speech is done here
+        console.log("Speech has finished!");
+        this.onSpeechComplete();  // Call a function to handle completion, if needed
+
+    } catch (error) {
+        console.error('Error while speaking:', error);
+    }
+  }
+
+  onSpeechComplete() {
+    this.bgMusicService.restoreVolume();
   }
   
   async openDescription() {

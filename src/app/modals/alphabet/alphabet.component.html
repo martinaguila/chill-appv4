@@ -5,6 +5,11 @@
             <img class="top-img" src="../../../assets/images/close.png" alt="">
         </div>
     </div>
+    <div class="box">
+        <div class="box-inner">
+          <h1>Alphabet</h1>
+        </div>
+    </div>
     <ion-grid>
         <ion-row>
             <ion-col size="3">
@@ -111,5 +116,46 @@
             </ion-col>
         </ion-row>
     </ion-grid>
-    <!-- </div> -->
+    <div class="box">
+        <div class="box-inner">
+          <h1>Colors</h1>
+        </div>
+    </div>
+    <ion-grid>
+        <ion-row>
+            <ion-col size="4">
+                <div (click)="triggerHeartbeat($event)" (click)="sayColor('red')">
+                    <img class="img" src="../../../assets/colors/red.jpg">
+                </div>
+            </ion-col>
+            <ion-col size="4">
+                <div (click)="triggerHeartbeat($event)" (click)="sayColor('blue')">
+                    <img class="img" src="../../../assets/colors/blue.jpg">
+                </div>
+            </ion-col>
+            <ion-col size="4">
+                <div (click)="triggerHeartbeat($event)" (click)="sayColor('green')">
+                    <img class="img" src="../../../assets/colors/green.jpg">
+                </div>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col size="4">
+                <div (click)="triggerHeartbeat($event)" (click)="sayColor('yellow')">
+                    <img class="img" src="../../../assets/colors/yellow.jpg">
+                </div>
+            </ion-col>
+            <ion-col size="4">
+                <div (click)="triggerHeartbeat($event)" (click)="sayColor('orange')">
+                    <img class="img" src="../../../assets/colors/orange.jpg">
+                </div>
+            </ion-col>
+            <ion-col size="4">
+                <div (click)="triggerHeartbeat($event)" (click)="sayColor('purple')">
+                    <img class="img" src="../../../assets/colors/purple.jpg">
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>    
 </div>
