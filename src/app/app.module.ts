@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ResultComponent } from './modals/result/result.component';
 import { AlphabetComponent } from './modals/alphabet/alphabet.component';
+import { PopupComponent } from './modals/popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AlphabetComponent } from './modals/alphabet/alphabet.component';
     MenuComponent,
     PictureComponent,
     ResultComponent,
-    AlphabetComponent
+    AlphabetComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule, 

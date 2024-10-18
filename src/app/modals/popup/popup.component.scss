@@ -13,7 +13,18 @@
 
   .message {
     position: absolute;
-    top: 16%;
+    top: 23%;
+    width: 60%;
+    font-size: 5.5vw;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+  }
+
+  .message2 {
+    position: absolute;
+    top: 19%;
     width: 60%;
     font-size: 5.5vw;
     text-align: center;

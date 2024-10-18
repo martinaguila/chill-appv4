@@ -146,6 +146,29 @@ export class ResultComponent implements OnInit {
 
         // Speech is done here
         console.log("Speech has finished!");
+        setTimeout(async () => {
+          this.speak2(value);
+        }, 2000);
+        
+
+    } catch (error) {
+        console.error('Error while speaking:', error);
+    }
+  }
+
+  async speak2(value: string) {
+    try {
+      this.bgMusicService.reduceVolume();      
+        await TextToSpeech.speak({
+            text: value,
+            lang: 'en-US',  // Language code
+            rate: 1.3,      // Increase the speaking rate for a more energetic tone
+            pitch: 1.5,     // Increase the pitch to make the voice higher
+            volume: 1.0     // Volume (1 is full)
+        });
+
+        // Speech is done here
+        console.log("Speech has finished!");
         this.onSpeechComplete();  // Call a function to handle completion, if needed
 
     } catch (error) {
